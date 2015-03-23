@@ -1,0 +1,38 @@
+﻿@model CalReply.Events.Web.ViewModels.ActiveCalendarIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+
+    <div>
+        <h2>Active Calendars</h2>
+    </div>
+
+    <div class="container">
+
+        <table class="table table-responsive">
+            @if (Model.ActiveCalendars.Any())
+            {
+
+                foreach (var item in Model.ActiveCalendars)
+                {
+                    <tr class="col-md-4">
+
+                        <td>
+                            @{
+                    var base64 = Convert.ToBase64String(item.ImageByteArray);
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            }
+
+                            <img src="@imgSrc" alt="Image" /><br /><p class="help-block">@item.SubscriberCount.ToString("#,##0") Subscribers</p>
+                        </td>
+                    </tr>
+                }
+
+
+            }
+        </table>
+
+    </div>
+</div>

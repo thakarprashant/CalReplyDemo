@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalReply</title>
+
+    <!--Fonts and Icons-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!--Essential CSS-->
+    <link rel="stylesheet" href="/Content/bootstrap.css">
+    <link rel="stylesheet" href="/Content/site.css">
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse-ext navbar-fixed-top" role="navigation">
+            @Html.Partial("_TopNavBar")
+            @Html.Partial("_SideBar")
+        </nav>
+         
+
+        <!-- /#page-wrapper -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                    @RenderBody()
+                </div>
+                </div>
+          
+        </div>
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap", "~/bundles/jqueryui")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
